@@ -4,7 +4,7 @@
 #Last Modify:2015-11-30
 #
 
-if [ $# ]; then
+if [ $# -gt 0 ]; then
 completeAuto=$1
 else
 completeAuto="n"
@@ -44,7 +44,11 @@ echo -e "Do you need Python Develop Environment?(y/n)[y]]"
 if [ "$completeAuto" = "n" ]
 	then
 		option = "y"
-		read option
+		read inputs
+		if [ -z inputs ];then
+		else
+			option=$inputs
+		fi
 fi
 if [ "$option" == y* -o "$completeAuto" = "a" ]
 	then
@@ -60,7 +64,11 @@ echo -e "Do you need Server Develop Environment?(ngnix) (y/n)[y]]"
 if [ "$completeAuto" = "n" ]
 	then
 		option = "y"
-		read option
+		read inputs
+		if [ -z inputs ];then
+		else
+			option=$inputs
+		fi
 fi
 if [ "$option" == y* -o "$completeAuto" = "a" ]
 	then
@@ -80,7 +88,11 @@ echo -e "Do you need oh-my-zsh ? (y/n)[y]]"
 if [ "$completeAuto" = "n" ]
 	then		
 		option = "y"
-		read option
+		read inputs
+		if [ -z inputs ];then
+		else
+			option=$inputs
+		fi
 fi
 if [ "$option" == y* -o "$completeAuto" = "a" ]
 	then
