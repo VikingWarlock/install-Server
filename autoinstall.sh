@@ -43,10 +43,9 @@ sleep 1
 echo -e "Do you need Python Develop Environment?(y/n)[y]]"
 if [ "$completeAuto" = "n" ]
 	then
-		option = "y"
+		option="y"
 		read inputs
-		if [ -z inputs ];then
-		else
+		if [ ! -z inputs ];then
 			option=$inputs
 		fi
 fi
@@ -63,10 +62,9 @@ fi
 echo -e "Do you need Server Develop Environment?(ngnix) (y/n)[y]]"
 if [ "$completeAuto" = "n" ]
 	then
-		option = "y"
+		option="y"
 		read inputs
-		if [ -z inputs ];then
-		else
+		if [ ! -z inputs ];then
 			option=$inputs
 		fi
 fi
@@ -86,11 +84,10 @@ if [ "$option" == y* -o "$completeAuto" = "a" ]
 fi
 echo -e "Do you need oh-my-zsh ? (y/n)[y]]"
 if [ "$completeAuto" = "n" ]
-	then		
-		option = "y"
+	then
+		option="y"
 		read inputs
-		if [ -z inputs ];then
-		else
+		if [ ! -z inputs ];then
 			option=$inputs
 		fi
 fi
